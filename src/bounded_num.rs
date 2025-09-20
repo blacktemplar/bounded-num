@@ -65,7 +65,11 @@ where
     Min: Representable<T>,
     Max: Representable<T>,
 {
-    /// Tries to create a new bound
+    /// Tries to create a new bounded num
+    ///
+    /// # Errors
+    ///
+    /// This errors if `Min::VALUE <= t <= Max::VALUE` is violated.
     pub fn try_new(t: T) -> Result<Self, OutOfBoundsError> {
         if t < Min::VALUE {
             Err(OutOfBoundsError::TooSmall)
