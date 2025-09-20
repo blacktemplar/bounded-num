@@ -1,0 +1,8 @@
+error[E0271]: type mismatch resolving `<PInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UTerm, B1>, B0>, B0>, B0>, B0>, B0>, B0>, B0>, B0>> as IsLessOrEqual<PInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UTerm, B1>, B1>, B1>, B1>, B1>, B1>, B1>, B1>>>>::Output == B1`
+ --> tests/compile_fail/ops/add/u8_invalid_add.rs:8:23
+  |
+8 |     let result = left + right;
+  |                       ^ expected `B1`, found `B0`
+  |
+  = note: required for `PInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UTerm, B1>, B0>, B0>, B0>, B0>, B0>, B0>, B0>, B0>>` to implement `Representable<u8>`
+  = note: required for `BoundedNum<u8, Z0, PInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UInt<UTerm, B1>, B0>, B0>, B0>, B0>, B0>, B0>, B0>>>` to implement `Add`

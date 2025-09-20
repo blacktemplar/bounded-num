@@ -1,0 +1,17 @@
+[package]
+name = "bounded-num"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+typenum = "1.18.0"
+
+[dev-dependencies]
+trybuild = "1.0"
+
+[features]
+128bit = ["typenum/i128"]
+indexing = ["typenum/const-generics"]
+
+[patch.crates-io]
+typenum = { git = 'https://github.com/blacktemplar/typenum.git', branch = "feature-to-int-i128" }

@@ -1,0 +1,14 @@
+error[E0271]: type mismatch resolving `<PInt<UInt<UTerm, B1>> as IsLessOrEqual<Z0>>::Output == B1`
+ --> tests/compile_fail/conv/u8_invalid_into.rs:7:53
+  |
+7 |     let new_value: BoundedNum<u8, P1, P255> = value.into();
+  |                                                     ^^^^ expected `B1`, found `B0`
+  |
+note: required by a bound in `bounded_num::conv::<impl BoundedNum<T1, Min1, Max1>>::into`
+ --> src/conv.rs
+  |
+  |     pub fn into<T2, Min2, Max2>(self) -> BoundedNum<T2, Min2, Max2>
+  |            ---- required by a bound in this associated function
+...
+  |         Min2: IsLessOrEqual<Min1, Output = True>,
+  |                                   ^^^^^^^^^^^^^ required by this bound in `bounded_num::conv::<impl BoundedNum<T1, Min1, Max1>>::into`

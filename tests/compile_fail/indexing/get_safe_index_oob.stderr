@@ -1,0 +1,7 @@
+error[E0271]: type mismatch resolving `<PInt<UInt<UInt<UInt<UTerm, B1>, B1>, B0>> as IsLess>::Output == B1`
+ --> tests/compile_fail/indexing/get_safe_index_oob.rs:8:23
+  |
+8 |     let value = array.get_safe(index);
+  |                       ^^^^^^^^ expected `B1`, found `B0`
+  |
+  = note: required for `[{integer}; 6]` to implement `SafeGet<{integer}, BoundedNum<usize, PInt<UInt<UTerm, B1>>, PInt<UInt<UInt<UInt<UTerm, B1>, B1>, B0>>>>`
